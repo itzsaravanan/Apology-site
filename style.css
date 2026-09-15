@@ -1,647 +1,1001 @@
+/* ===================================================
+   GLOBAL
+=================================================== */
+
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-  font-family:"Poppins",sans-serif;
-  background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
-  color:#5f4b5f;
-  overflow-x:hidden;
+    font-family:"Poppins",sans-serif;
+    background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
+    color:#5f4b5f;
+    overflow-x:hidden;
 }
 
 .hidden{
-  display:none !important;
+    display:none !important;
 }
 
-/* ================= LANDING ================= */
+/* ===================================================
+   LANDING
+=================================================== */
 
 .landing{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:24px;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:24px;
 }
 
 .card{
-  width:100%;
-  max-width:340px;
-  background:#fffaf6;
-  border-radius:28px;
-  padding:32px 24px;
-  text-align:center;
-  box-shadow:0 12px 35px rgba(0,0,0,.12);
-  animation:popIn .6s ease;
+
+    width:100%;
+    max-width:340px;
+
+    background:#fffaf6;
+
+    border-radius:28px;
+
+    padding:32px 24px;
+
+    text-align:center;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.12);
+
+    animation:popIn .6s ease;
+
 }
 
 .emoji{
-  font-size:46px;
-  animation:float 2s infinite ease-in-out;
+
+    font-size:46px;
+    animation:float 2s infinite ease-in-out;
+
 }
 
 h1{
-  font-family:"Pacifico",cursive;
-  color:#6b4f74;
-  margin:14px 0;
-  font-size:32px;
+
+    font-family:"Pacifico",cursive;
+    color:#6b4f74;
+
+    margin:14px 0;
+
+    font-size:clamp(28px,7vw,32px);
+
 }
 
 .main{
-  font-size:17px;
+
+    font-size:17px;
+
 }
 
 .sub{
-  margin:14px 0;
-  line-height:1.6;
+
+    margin:14px 0;
+    line-height:1.6;
+
 }
 
 .tiny{
-  font-size:14px;
-  color:#777;
+
+    font-size:14px;
+    color:#777;
+
 }
 
-/* ================= BUTTONS ================= */
+/* ===================================================
+   BUTTONS
+=================================================== */
 
 button{
-  margin-top:16px;
-  width:100%;
-  height:54px;
-  border:none;
-  border-radius:999px;
-  background:#F8AFC9;
-  color:white;
-  font-size:17px;
-  font-weight:600;
-  cursor:pointer;
-  transition:.25s;
+
+    margin-top:16px;
+
+    width:100%;
+    min-height:54px;
+
+    border:none;
+    border-radius:999px;
+
+    background:#F8AFC9;
+    color:white;
+
+    font-size:17px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
 }
 
 button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(248,175,201,.35);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 18px rgba(248,175,201,.35);
+
 }
 
 button:active{
-  transform:scale(.96);
+
+    transform:scale(.96);
+
 }
 
-/* ================= TRANSITION ================= */
+/* ===================================================
+   TRANSITION
+=================================================== */
 
 .transition{
-  position:fixed;
-  inset:0;
-  background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  z-index:1000;
+
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:1000;
+
 }
 
 .transition.show{
-  animation:fadeMagic 1s forwards;
+
+    animation:fadeMagic 1s forwards;
+
 }
 
 .sparkles{
-  font-size:50px;
-  animation:spin 1s linear infinite;
+
+    font-size:50px;
+    animation:spin 1s linear infinite;
+
 }
 
 .transition h2{
-  margin-top:18px;
-  font-family:"Pacifico",cursive;
-  color:#6b4f74;
+
+    margin-top:18px;
+
+    font-family:"Pacifico",cursive;
+    color:#6b4f74;
+
 }
 
-/* ================= MENU ================= */
+/* ===================================================
+   HOME MENU
+=================================================== */
 
 .menu{
-  min-height:100vh;
-  padding:24px;
+
+    min-height:100dvh;
+    padding:24px;
+
 }
 
 .menu-title{
-  text-align:center;
-  margin:18px 0 28px;
+
+    text-align:center;
+    margin:18px 0 28px;
+
 }
 
 .grid{
-  display:grid;
-  gap:16px;
+
+    display:grid;
+    gap:16px;
+
 }
 
 .menu-card{
-  background:white;
-  border-radius:22px;
-  padding:20px;
-  box-shadow:0 8px 18px rgba(0,0,0,.08);
-  cursor:pointer;
-  transition:.25s;
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    transition:.25s;
+
 }
 
 .menu-card:hover{
-  transform:translateY(-4px);
+
+    transform:translateY(-4px);
+
 }
 
 .menu-card:active{
-  transform:scale(.97);
+
+    transform:scale(.97);
+
 }
 
-/* ================= SECTIONS ================= */
+.menu-card h3{
+
+    color:#6b4f74;
+    margin-bottom:8px;
+
+}
+
+/* ===================================================
+   SECTIONS
+=================================================== */
 
 .section{
-  min-height:100vh;
-  padding:24px;
+
+    min-height:100dvh;
+    padding:24px;
+
 }
 
 .section h2{
-  font-family:"Pacifico",cursive;
-  text-align:center;
-  margin-bottom:24px;
+
+    font-family:"Pacifico",cursive;
+
+    text-align:center;
+
+    margin-bottom:24px;
+
 }
 
 .back{
-  width:auto;
-  background:none;
-  color:#6b4f74;
-  box-shadow:none;
-  padding:0;
-  margin-bottom:20px;
+
+    width:auto;
+
+    background:none;
+
+    color:#6b4f74;
+
+    box-shadow:none;
+
+    padding:10px 6px;
+
+    margin-bottom:20px;
+
+    min-height:44px;
+
 }
 
 .note{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  margin-bottom:16px;
-  box-shadow:0 6px 14px rgba(0,0,0,.08);
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    margin-bottom:16px;
+
+    box-shadow:0 6px 14px rgba(0,0,0,.08);
+
+    line-height:1.7;
+
 }
 
 .answer{
-  margin-top:18px;
-  text-align:center;
-  font-weight:600;
-}
 
-/* ===================================================
-   POETRY JOURNAL
-=================================================== */
+    margin-top:18px;
 
-.poem-page{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 30%),
-    linear-gradient(180deg,#1f295a 0%,#31254e 45%,#5a2b57 100%);
-}
+    text-align:center;
 
-/* Twinkling stars */
+    font-weight:600;
 
-.poem-page::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle,#fff 1px,transparent 2px) 30px 50px/170px 170px,
-    radial-gradient(circle,#ffe6a8 1px,transparent 2px) 110px 80px/230px 230px,
-    radial-gradient(circle,#fff 1px,transparent 2px) 50px 140px/250px 250px;
-  opacity:.3;
-  animation:twinkle 8s ease-in-out infinite;
-  pointer-events:none;
-}
-
-/* Winter breeze */
-
-.poem-page::after{
-  content:"🌸 ❄ ✦";
-  position:absolute;
-  top:-10%;
-  left:-10%;
-  width:120%;
-  height:120%;
-  font-size:20px;
-  opacity:.15;
-  animation:winterBreeze 22s linear infinite;
-  pointer-events:none;
-}
-
-.poem-title{
-  position:relative;
-  z-index:2;
-  color:#ffe7ef;
-  text-shadow:0 0 20px rgba(255,255,255,.25);
-}
-
-/* Journal menu */
-
-.poem-card{
-  background:rgba(255,255,255,.12);
-  backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.12);
-  border-radius:22px;
-  padding:24px;
-  margin-bottom:18px;
-  text-align:center;
-  color:white;
-  cursor:pointer;
-  transition:.3s;
-}
-
-.poem-card:hover{
-  transform:translateY(-6px);
-  background:rgba(255,255,255,.18);
-}
-
-.poem-card .icon{
-  font-size:34px;
-}
-
-.poem-card h3{
-  margin:10px 0;
-  font-family:"Pacifico",cursive;
-}
-
-.poem-card p{
-  opacity:.85;
-}
-
-/* Individual poem */
-
-.poem-content{
-  animation:fadePoem .5s ease;
-}
-
-.poem-paper{
-  position:relative;
-  z-index:2;
-  max-width:760px;
-  margin:0 auto;
-  background:#fffdfb;
-  border-radius:28px;
-  padding:45px 35px;
-  box-shadow:0 18px 40px rgba(0,0,0,.28);
-  overflow:hidden;
-  animation:paperFloat 8s ease-in-out infinite;
-}
-
-/* Notebook lines */
-
-.poem-paper::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    repeating-linear-gradient(
-      transparent,
-      transparent 33px,
-      rgba(115,170,255,.12) 34px
-    );
-  pointer-events:none;
-}
-
-/* Warm Mysore lamp glow */
-
-.poem-paper::after{
-  content:"";
-  position:absolute;
-  bottom:-70px;
-  left:50%;
-  transform:translateX(-50%);
-  width:340px;
-  height:170px;
-  background:radial-gradient(circle,
-      rgba(255,190,90,.18),
-      rgba(255,190,90,.05),
-      transparent 70%);
-  animation:lampGlow 5s ease-in-out infinite;
-}
-
-.flower{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-size:2rem;
-}
-
-.poem-subtitle{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-family:"Pacifico",cursive;
-  color:#6b4f74;
-  font-size:1.8rem;
-  margin:18px 0 26px;
-}
-
-.poem-text{
-  position:relative;
-  z-index:2;
-  line-height:2;
-  color:#444;
-  margin-bottom:20px;
-}
-
-.divider{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-size:1.3rem;
-  margin:24px 0;
-  animation:dividerPulse 4s ease-in-out infinite;
-}
-
-.signature{
-  position:relative;
-  z-index:2;
-  text-align:right;
-  margin-top:30px;
-  font-family:"Pacifico",cursive;
-  font-size:1.3rem;
-  color:#8a4f5d;
-}
-
-.ending{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  font-family:"Pacifico",cursive;
-  font-size:1.8rem;
-  color:#c84f7d;
-  margin:25px 0;
-}
-
-.ending-text{
-  text-align:center;
-  font-style:italic;
-}
-
-.birthday{
-  text-align:center;
-  margin-top:25px;
-  font-family:"Pacifico",cursive;
-  font-size:1.6rem;
-  color:#6b4f74;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:600px){
-
-  .card{
-    max-width:100%;
-  }
-
-  .poem-paper{
-    padding:28px 22px;
-  }
-
-  .poem-title{
-    font-size:2rem;
-  }
-
-  .poem-subtitle{
-    font-size:1.5rem;
-  }
-
-  .poem-text{
-    font-size:.96rem;
-    line-height:1.85;
-  }
+    min-height:28px;
 
 }
 
 /* ===================================================
-   ANIMATIONS
+   GENERAL ANIMATIONS
 =================================================== */
 
 @keyframes popIn{
 
-  from{
-    opacity:0;
-    transform:translateY(25px) scale(.95);
-  }
+    from{
 
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1);
-  }
+        opacity:0;
+        transform:translateY(25px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0) scale(1);
+
+    }
 
 }
 
 @keyframes float{
 
-  50%{
-    transform:translateY(-8px);
-  }
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
 
 }
 
 @keyframes fadeMagic{
 
-  0%{
-    opacity:0;
-    transform:scale(.9);
-  }
+    0%{
 
-  20%{
-    opacity:1;
-  }
+        opacity:0;
+        transform:scale(.9);
 
-  80%{
-    opacity:1;
-  }
+    }
 
-  100%{
-    opacity:0;
-    transform:scale(1.05);
-  }
+    20%{
+
+        opacity:1;
+
+    }
+
+    80%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+        transform:scale(1.05);
+
+    }
 
 }
 
 @keyframes spin{
 
-  to{
-    transform:rotate(360deg);
-  }
+    to{
+
+        transform:rotate(360deg);
+
+    }
 
 }
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media(max-width:600px){
+
+    .landing,
+    .menu,
+    .section{
+
+        padding:18px;
+
+    }
+
+    .card{
+
+        max-width:100%;
+
+        padding:28px 22px;
+
+    }
+
+    .menu-card{
+
+        padding:18px;
+
+    }
+
+    button{
+
+        font-size:16px;
+
+    }
+
+}/* ===================================================
+   POETRY JOURNAL
+=================================================== */
+
+.poem-page{
+    position:relative;
+    min-height:100dvh;
+    padding:24px;
+    overflow:hidden;
+}
+
+/* Mysore Night Video */
+
+.journal-bg{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+    filter:brightness(.45) saturate(.95);
+}
+
+/* Cinematic overlay */
+
+.poem-page::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        rgba(8,14,35,.35),
+        rgba(18,24,52,.50),
+        rgba(12,18,40,.72)
+    );
+    z-index:1;
+}
+
+/* Twinkling stars */
+
+.poem-page::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle,#fff 1px,transparent 2px) 30px 40px/180px 180px,
+      radial-gradient(circle,#ffe8b3 1px,transparent 2px) 120px 100px/240px 240px,
+      radial-gradient(circle,#fff 1px,transparent 2px) 60px 150px/220px 220px;
+    opacity:.35;
+    animation:twinkle 8s ease-in-out infinite;
+    pointer-events:none;
+    z-index:2;
+}
+
+/* Title */
+
+.poem-title{
+    position:relative;
+    z-index:5;
+    text-align:center;
+    color:#fff1f6;
+    text-shadow:0 0 20px rgba(255,220,235,.4);
+    margin-bottom:28px;
+}
+
+/* Back button */
+
+.poem-page .back{
+    position:relative;
+    z-index:5;
+    color:#ffd8e7;
+}
+
+/* ===================================================
+   JOURNAL CARDS
+=================================================== */
+
+.poem-card{
+
+    position:relative;
+    z-index:5;
+
+    background:rgba(255,255,255,.14);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.poem-card:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(255,255,255,.18);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.28);
+
+}
+
+.poem-card .icon{
+
+    font-size:40px;
+    margin-bottom:8px;
+
+}
+
+.poem-card h3{
+
+    font-family:"Pacifico",cursive;
+    margin-bottom:8px;
+    color:white;
+
+}
+
+.poem-card p{
+
+    color:rgba(255,255,255,.9);
+
+}
+
+/* ===================================================
+   INDIVIDUAL POEMS
+=================================================== */
+
+.poem-content{
+
+    position:relative;
+    z-index:6;
+
+    animation:fadePoem .45s ease;
+
+}
+
+.poem-back{
+
+    color:white;
+
+}
+
+.poem-paper{
+
+    width:min(90vw,760px);
+
+    margin:18px auto 40px;
+
+    background:#fffdfb;
+
+    border-radius:28px;
+
+    padding:clamp(24px,5vw,42px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.28);
+
+    position:relative;
+
+    overflow:hidden;
+
+    animation:paperFloat 8s ease-in-out infinite;
+
+}
+
+/* Notebook lines */
+
+.poem-paper::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+      repeating-linear-gradient(
+        transparent,
+        transparent 33px,
+        rgba(120,170,255,.10) 34px
+      );
+
+    pointer-events:none;
+
+}
+
+/* Warm lamp glow */
+
+.poem-paper::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-60px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:260px;
+    height:140px;
+
+    background:radial-gradient(circle,
+      rgba(255,194,90,.20),
+      rgba(255,194,90,.06),
+      transparent 70%);
+
+    animation:lampGlow 5s ease-in-out infinite;
+
+}
+
+.flower{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+    font-size:2rem;
+
+}
+
+.poem-subtitle{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    font-family:"Pacifico",cursive;
+
+    color:#6b4f74;
+
+    font-size:clamp(1.6rem,5vw,2.2rem);
+
+    margin:18px 0 28px;
+
+}
+
+.poem-text{
+
+    position:relative;
+    z-index:2;
+
+    color:#444;
+
+    line-height:2;
+
+    margin-bottom:22px;
+
+}
+
+.divider{
+
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    font-size:1.3rem;
+
+    margin:24px 0;
+
+    animation:dividerPulse 4s ease-in-out infinite;
+
+}
+
+.signature{
+
+    position:relative;
+    z-index:2;
+
+    text-align:right;
+
+    margin-top:30px;
+
+    font-family:"Pacifico",cursive;
+
+    color:#8a4f5d;
+
+    font-size:1.3rem;
+
+}
+
+.ending{
+
+    text-align:center;
+
+    font-family:"Pacifico",cursive;
+
+    color:#c84f7d;
+
+    font-size:1.8rem;
+
+    margin:26px 0;
+
+}
+
+.ending-text{
+
+    text-align:center;
+    font-style:italic;
+
+}
+
+.birthday{
+
+    text-align:center;
+
+    margin-top:24px;
+
+    font-family:"Pacifico",cursive;
+
+    color:#6b4f74;
+
+    font-size:1.6rem;
+
+}
+
+/* ===================================================
+   POEM ANIMATIONS
+=================================================== */
 
 @keyframes twinkle{
 
-  0%,100%{
-    opacity:.18;
-  }
+    0%,100%{
+        opacity:.18;
+    }
 
-  50%{
-    opacity:.55;
-  }
-
-}
-
-@keyframes winterBreeze{
-
-  0%{
-    transform:translate(-40px,-120px) rotate(0deg);
-  }
-
-  50%{
-    transform:translate(35px,45vh) rotate(120deg);
-  }
-
-  100%{
-    transform:translate(-20px,105vh) rotate(240deg);
-  }
-
-}
-
-@keyframes paperFloat{
-
-  0%,100%{
-    transform:translateY(0);
-  }
-
-  50%{
-    transform:translateY(-4px);
-  }
-
-}
-
-@keyframes lampGlow{
-
-  0%,100%{
-    opacity:.45;
-    transform:translateX(-50%) scale(.95);
-  }
-
-  50%{
-    opacity:1;
-    transform:translateX(-50%) scale(1.08);
-  }
-
-}
-
-@keyframes dividerPulse{
-
-  0%,100%{
-    transform:scale(1);
-    opacity:.6;
-  }
-
-  50%{
-    transform:scale(1.1);
-    opacity:1;
-  }
+    50%{
+        opacity:.55;
+    }
 
 }
 
 @keyframes fadePoem{
 
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
+    from{
 
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
+        opacity:0;
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes paperFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-4px);
+    }
+
+}
+
+@keyframes dividerPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+        opacity:.6;
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+        opacity:1;
+
+    }
+
+}
+
+@keyframes lampGlow{
+
+    0%,100%{
+
+        opacity:.45;
+        transform:translateX(-50%) scale(.95);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:translateX(-50%) scale(1.08);
+
+    }
 
 }
 
 /* ===================================================
-   WINTER NOSTALGIA CINEMATIC VIDEO
+   RESPONSIVE
 =================================================== */
 
-.winter-scene{
-  position:relative;
-  min-height:100vh;
-  overflow:hidden;
-  padding:30px 18px;
+@media(max-width:600px){
+
+    .poem-page{
+
+        padding:18px;
+
+    }
+
+    .poem-card{
+
+        padding:22px;
+
+    }
+
+    .poem-paper{
+
+        width:94vw;
+        padding:28px 22px;
+        border-radius:22px;
+
+    }
+
+    .poem-text{
+
+        font-size:.96rem;
+        line-height:1.9;
+
+    }
+
 }
 
-/* Fullscreen Mysore video */
+/* Reduce motion for accessibility */
 
-.winter-bg{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:0;
-  filter:brightness(.38) saturate(.9);
+@media (prefers-reduced-motion: reduce){
+
+    *{
+
+        animation:none !important;
+        transition:none !important;
+
+    }
+
 }
 
-/* Dark cinematic overlay */
+/* ===================================================
+   CORTISOL TEST PAGE
+=================================================== */
 
-.winter-scene::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:linear-gradient(
-      180deg,
-      rgba(8,14,35,.30),
-      rgba(14,22,48,.55),
-      rgba(10,16,38,.78)
-  );
-  z-index:1;
+.quiz-page{
+
+    position:relative;
+
+    min-height:100dvh;
+
+    background-image:url("WhatsApp Image 2026-09-15 at 19.00.18.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    overflow:hidden;
+
 }
 
-/* Soft moving mist */
+/* Dark overlay */
 
-.winter-scene::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-      radial-gradient(circle at 20% 30%, rgba(255,255,255,.05), transparent 35%),
-      radial-gradient(circle at 80% 60%, rgba(255,255,255,.04), transparent 40%);
-  animation:mistMove 18s ease-in-out infinite alternate;
-  z-index:2;
+.quiz-page::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:rgba(20,18,35,.55);
+
 }
 
-/* Keep controls and poem above video */
+.quiz-page>*{
 
-.winter-scene .poem-paper,
-.winter-scene .poem-back{
-  position:relative;
-  z-index:5;
+    position:relative;
+    z-index:2;
+
 }
 
-/* Glass paper effect */
+.quiz-page h2{
 
-.winter-scene .poem-paper{
-  background:rgba(255,253,251,.95);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.35);
+    color:white;
+    text-shadow:0 4px 12px rgba(0,0,0,.5);
+
 }
 
-/* White back button */
+/* Question Card */
 
-.poem-back{
-  color:#fff;
+.quiz-box{
+
+    max-width:420px;
+
+    margin:40px auto;
+
+    padding:28px;
+
+    background:rgba(255,255,255,.16);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.22);
+
+    border-radius:26px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    animation:popIn .5s ease;
+
 }
 
-/* Gentle floating paper */
+.question{
 
-.winter-scene .poem-paper{
-  animation:paperFloat 8s ease-in-out infinite;
+    color:white;
+
+    text-align:center;
+
+    font-size:1.2rem;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
 }
 
-/* Mist movement */
+.quiz-buttons{
 
-@keyframes mistMove{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 
-  from{
-    transform:translateX(-18px) translateY(-8px);
-  }
+}
 
-  to{
-    transform:translateX(18px) translateY(10px);
-  }
+.quiz-buttons button{
+
+    background:#f8afc9;
+
+    color:white;
+
+    border:none;
+
+    border-radius:999px;
+
+    padding:14px;
+
+    font-size:16px;
+
+    transition:.25s;
+
+}
+
+.quiz-buttons button:hover{
+
+    transform:translateY(-2px);
+
+    background:#ff8eb7;
+
+}
+
+.quiz-page .back{
+
+    color:white;
 
 }
