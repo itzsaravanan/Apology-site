@@ -1,0 +1,647 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:"Poppins",sans-serif;
+  background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
+  color:#5f4b5f;
+  overflow-x:hidden;
+}
+
+.hidden{
+  display:none !important;
+}
+
+/* ================= LANDING ================= */
+
+.landing{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:24px;
+}
+
+.card{
+  width:100%;
+  max-width:340px;
+  background:#fffaf6;
+  border-radius:28px;
+  padding:32px 24px;
+  text-align:center;
+  box-shadow:0 12px 35px rgba(0,0,0,.12);
+  animation:popIn .6s ease;
+}
+
+.emoji{
+  font-size:46px;
+  animation:float 2s infinite ease-in-out;
+}
+
+h1{
+  font-family:"Pacifico",cursive;
+  color:#6b4f74;
+  margin:14px 0;
+  font-size:32px;
+}
+
+.main{
+  font-size:17px;
+}
+
+.sub{
+  margin:14px 0;
+  line-height:1.6;
+}
+
+.tiny{
+  font-size:14px;
+  color:#777;
+}
+
+/* ================= BUTTONS ================= */
+
+button{
+  margin-top:16px;
+  width:100%;
+  height:54px;
+  border:none;
+  border-radius:999px;
+  background:#F8AFC9;
+  color:white;
+  font-size:17px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.25s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 18px rgba(248,175,201,.35);
+}
+
+button:active{
+  transform:scale(.96);
+}
+
+/* ================= TRANSITION ================= */
+
+.transition{
+  position:fixed;
+  inset:0;
+  background:linear-gradient(180deg,#FFF8F2,#FFD6E7);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  z-index:1000;
+}
+
+.transition.show{
+  animation:fadeMagic 1s forwards;
+}
+
+.sparkles{
+  font-size:50px;
+  animation:spin 1s linear infinite;
+}
+
+.transition h2{
+  margin-top:18px;
+  font-family:"Pacifico",cursive;
+  color:#6b4f74;
+}
+
+/* ================= MENU ================= */
+
+.menu{
+  min-height:100vh;
+  padding:24px;
+}
+
+.menu-title{
+  text-align:center;
+  margin:18px 0 28px;
+}
+
+.grid{
+  display:grid;
+  gap:16px;
+}
+
+.menu-card{
+  background:white;
+  border-radius:22px;
+  padding:20px;
+  box-shadow:0 8px 18px rgba(0,0,0,.08);
+  cursor:pointer;
+  transition:.25s;
+}
+
+.menu-card:hover{
+  transform:translateY(-4px);
+}
+
+.menu-card:active{
+  transform:scale(.97);
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+  min-height:100vh;
+  padding:24px;
+}
+
+.section h2{
+  font-family:"Pacifico",cursive;
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.back{
+  width:auto;
+  background:none;
+  color:#6b4f74;
+  box-shadow:none;
+  padding:0;
+  margin-bottom:20px;
+}
+
+.note{
+  background:white;
+  padding:18px;
+  border-radius:18px;
+  margin-bottom:16px;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
+
+.answer{
+  margin-top:18px;
+  text-align:center;
+  font-weight:600;
+}
+
+/* ===================================================
+   POETRY JOURNAL
+=================================================== */
+
+.poem-page{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.08), transparent 30%),
+    linear-gradient(180deg,#1f295a 0%,#31254e 45%,#5a2b57 100%);
+}
+
+/* Twinkling stars */
+
+.poem-page::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle,#fff 1px,transparent 2px) 30px 50px/170px 170px,
+    radial-gradient(circle,#ffe6a8 1px,transparent 2px) 110px 80px/230px 230px,
+    radial-gradient(circle,#fff 1px,transparent 2px) 50px 140px/250px 250px;
+  opacity:.3;
+  animation:twinkle 8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* Winter breeze */
+
+.poem-page::after{
+  content:"🌸 ❄ ✦";
+  position:absolute;
+  top:-10%;
+  left:-10%;
+  width:120%;
+  height:120%;
+  font-size:20px;
+  opacity:.15;
+  animation:winterBreeze 22s linear infinite;
+  pointer-events:none;
+}
+
+.poem-title{
+  position:relative;
+  z-index:2;
+  color:#ffe7ef;
+  text-shadow:0 0 20px rgba(255,255,255,.25);
+}
+
+/* Journal menu */
+
+.poem-card{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:22px;
+  padding:24px;
+  margin-bottom:18px;
+  text-align:center;
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.poem-card:hover{
+  transform:translateY(-6px);
+  background:rgba(255,255,255,.18);
+}
+
+.poem-card .icon{
+  font-size:34px;
+}
+
+.poem-card h3{
+  margin:10px 0;
+  font-family:"Pacifico",cursive;
+}
+
+.poem-card p{
+  opacity:.85;
+}
+
+/* Individual poem */
+
+.poem-content{
+  animation:fadePoem .5s ease;
+}
+
+.poem-paper{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  margin:0 auto;
+  background:#fffdfb;
+  border-radius:28px;
+  padding:45px 35px;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+  overflow:hidden;
+  animation:paperFloat 8s ease-in-out infinite;
+}
+
+/* Notebook lines */
+
+.poem-paper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    repeating-linear-gradient(
+      transparent,
+      transparent 33px,
+      rgba(115,170,255,.12) 34px
+    );
+  pointer-events:none;
+}
+
+/* Warm Mysore lamp glow */
+
+.poem-paper::after{
+  content:"";
+  position:absolute;
+  bottom:-70px;
+  left:50%;
+  transform:translateX(-50%);
+  width:340px;
+  height:170px;
+  background:radial-gradient(circle,
+      rgba(255,190,90,.18),
+      rgba(255,190,90,.05),
+      transparent 70%);
+  animation:lampGlow 5s ease-in-out infinite;
+}
+
+.flower{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:2rem;
+}
+
+.poem-subtitle{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-family:"Pacifico",cursive;
+  color:#6b4f74;
+  font-size:1.8rem;
+  margin:18px 0 26px;
+}
+
+.poem-text{
+  position:relative;
+  z-index:2;
+  line-height:2;
+  color:#444;
+  margin-bottom:20px;
+}
+
+.divider{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-size:1.3rem;
+  margin:24px 0;
+  animation:dividerPulse 4s ease-in-out infinite;
+}
+
+.signature{
+  position:relative;
+  z-index:2;
+  text-align:right;
+  margin-top:30px;
+  font-family:"Pacifico",cursive;
+  font-size:1.3rem;
+  color:#8a4f5d;
+}
+
+.ending{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  font-family:"Pacifico",cursive;
+  font-size:1.8rem;
+  color:#c84f7d;
+  margin:25px 0;
+}
+
+.ending-text{
+  text-align:center;
+  font-style:italic;
+}
+
+.birthday{
+  text-align:center;
+  margin-top:25px;
+  font-family:"Pacifico",cursive;
+  font-size:1.6rem;
+  color:#6b4f74;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+  .card{
+    max-width:100%;
+  }
+
+  .poem-paper{
+    padding:28px 22px;
+  }
+
+  .poem-title{
+    font-size:2rem;
+  }
+
+  .poem-subtitle{
+    font-size:1.5rem;
+  }
+
+  .poem-text{
+    font-size:.96rem;
+    line-height:1.85;
+  }
+
+}
+
+/* ===================================================
+   ANIMATIONS
+=================================================== */
+
+@keyframes popIn{
+
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.95);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1);
+  }
+
+}
+
+@keyframes float{
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+}
+
+@keyframes fadeMagic{
+
+  0%{
+    opacity:0;
+    transform:scale(.9);
+  }
+
+  20%{
+    opacity:1;
+  }
+
+  80%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:scale(1.05);
+  }
+
+}
+
+@keyframes spin{
+
+  to{
+    transform:rotate(360deg);
+  }
+
+}
+
+@keyframes twinkle{
+
+  0%,100%{
+    opacity:.18;
+  }
+
+  50%{
+    opacity:.55;
+  }
+
+}
+
+@keyframes winterBreeze{
+
+  0%{
+    transform:translate(-40px,-120px) rotate(0deg);
+  }
+
+  50%{
+    transform:translate(35px,45vh) rotate(120deg);
+  }
+
+  100%{
+    transform:translate(-20px,105vh) rotate(240deg);
+  }
+
+}
+
+@keyframes paperFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-4px);
+  }
+
+}
+
+@keyframes lampGlow{
+
+  0%,100%{
+    opacity:.45;
+    transform:translateX(-50%) scale(.95);
+  }
+
+  50%{
+    opacity:1;
+    transform:translateX(-50%) scale(1.08);
+  }
+
+}
+
+@keyframes dividerPulse{
+
+  0%,100%{
+    transform:scale(1);
+    opacity:.6;
+  }
+
+  50%{
+    transform:scale(1.1);
+    opacity:1;
+  }
+
+}
+
+@keyframes fadePoem{
+
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* ===================================================
+   WINTER NOSTALGIA CINEMATIC VIDEO
+=================================================== */
+
+.winter-scene{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  padding:30px 18px;
+}
+
+/* Fullscreen Mysore video */
+
+.winter-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  filter:brightness(.38) saturate(.9);
+}
+
+/* Dark cinematic overlay */
+
+.winter-scene::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:linear-gradient(
+      180deg,
+      rgba(8,14,35,.30),
+      rgba(14,22,48,.55),
+      rgba(10,16,38,.78)
+  );
+  z-index:1;
+}
+
+/* Soft moving mist */
+
+.winter-scene::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,.05), transparent 35%),
+      radial-gradient(circle at 80% 60%, rgba(255,255,255,.04), transparent 40%);
+  animation:mistMove 18s ease-in-out infinite alternate;
+  z-index:2;
+}
+
+/* Keep controls and poem above video */
+
+.winter-scene .poem-paper,
+.winter-scene .poem-back{
+  position:relative;
+  z-index:5;
+}
+
+/* Glass paper effect */
+
+.winter-scene .poem-paper{
+  background:rgba(255,253,251,.95);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.35);
+}
+
+/* White back button */
+
+.poem-back{
+  color:#fff;
+}
+
+/* Gentle floating paper */
+
+.winter-scene .poem-paper{
+  animation:paperFloat 8s ease-in-out infinite;
+}
+
+/* Mist movement */
+
+@keyframes mistMove{
+
+  from{
+    transform:translateX(-18px) translateY(-8px);
+  }
+
+  to{
+    transform:translateX(18px) translateY(10px);
+  }
+
+}
